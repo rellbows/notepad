@@ -5,7 +5,10 @@ var j = 10; // initial # of items
 
 // tying functions to buttons
 document.getElementById( "add_item" ).onclick = function(){ add_item(j); j++ };
-document.getElementsByClassName( "delete_item" ).onclick = function() { delete_item() };
+var delete_buttons = document.getElementsByClassName( "delete_item" );
+for(var i = 0; i < delete_buttons.length; i++) {
+	delete_buttons[i].addEventListener('click', delete_item);
+}
 
 // function for creating items
 function create_items(){
@@ -20,10 +23,10 @@ function create_items(){
 
 		var new_break = document.createElement('br');
 
-		var new_delete = document.createElement('input');
-		new_delete.setAttribute('type', 'submit');
+		var new_delete = document.createElement('button');
+		new_delete.setAttribute('type', 'button');
 		new_delete.setAttribute('class', 'delete_item');
-		new_delete.setAttribute('value', 'delete');
+		new_delete.innerHTML = 'delete';
 
 		add_item_sib = document.getElementById('add_item');
 		parent_node.insertBefore(new_item, add_item_sib);
@@ -44,10 +47,11 @@ function add_item(x){
 
 	var new_break = document.createElement('br');
 
-	var new_delete = document.createElement('input');
-	new_delete.setAttribute('type', 'submit');
+	var new_delete = document.createElement('button');
+	new_delete.setAttribute('type', 'button');
 	new_delete.setAttribute('class', 'delete_item');
-	new_delete.setAttribute('value', 'delete');
+	new_delete.innerHTML = 'delete'
+	new_delete.addEventListener('click', delete_item);
 
 	add_item_sib = document.getElementById('add_item');
 	parent_node.insertBefore(new_item, add_item_sib);
@@ -58,5 +62,7 @@ function add_item(x){
 
 // function for deleting item on notepad
 function delete_item(){
+
+	console.log("hello!");
 
 }
