@@ -28,7 +28,7 @@ function create_items(){
 		new_delete.setAttribute('class', 'delete_item');
 		new_delete.innerHTML = 'delete';
 
-		add_item_sib = document.getElementById('add_item');
+		var add_item_sib = document.getElementById('add_item');
 		parent_node.insertBefore(new_item, add_item_sib);
 		parent_node.insertBefore(new_delete, add_item_sib);
 		parent_node.insertBefore(new_break, add_item_sib);
@@ -53,7 +53,7 @@ function add_item(x){
 	new_delete.innerHTML = 'delete'
 	new_delete.addEventListener('click', delete_item);
 
-	add_item_sib = document.getElementById('add_item');
+	var add_item_sib = document.getElementById('add_item');
 	parent_node.insertBefore(new_item, add_item_sib);
 	parent_node.insertBefore(new_delete, add_item_sib);
 	parent_node.insertBefore(new_break, add_item_sib);	
@@ -63,6 +63,11 @@ function add_item(x){
 // function for deleting item on notepad
 function delete_item(){
 
-	console.log("hello!");
+	var parent_node = document.getElementById('notepad');
+	var delete_item_sib = this;
+
+	delete_item_sib.previousSibling.remove();
+	delete_item_sib.nextSibling.remove();
+	delete_item_sib.remove();
 
 }
