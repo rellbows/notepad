@@ -1,0 +1,29 @@
+{
+  "name": "notepad",
+  "version": "1.0.0",
+  "description": "Web app that can generate lists and transmit them via e-mail.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www",
+    "serverstart": "DEBUG=notepad:* npm run devstart",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rellbows/notepad.git"
+  },
+  "author": "Ryan Ellis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rellbows/notepad/issues"
+  },
+  "homepage": "https://github.com/rellbows/notepad#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

@@ -12,5 +12,4 @@ Web app that can be used to generate lists, and transmit them via e-mail.
 
 ## Bugs/TODOS:
 
-1. Implement 'delete_item()' function.
-2. Implement e-mail functionality. Will need to transfer current static html site over to node based application to handle e-mail.
+1. Implement e-mail functionality. Will need to transfer current static html site over to node based application to handle e-mail.
